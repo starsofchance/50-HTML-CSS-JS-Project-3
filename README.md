@@ -6,4 +6,4 @@
 # 50 HTML, CSS, and JS sample project
 ## Project 3: AnalogClock
 An Image of the project output.
-![]()
+![](https://github.com/starsofchance/50-HTML-CSS-JS-Project-3/blob/main/Animation.gif)
