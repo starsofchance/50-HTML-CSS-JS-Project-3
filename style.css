@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(163, 175, 197);
+  font-family: "Courier New", Courier, monospace;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 70px;
+  position: absolute;
+  left: 50%;
+  /* bring it to the center */
+  transform: translateX(-50%);
+  top: 60px;
+  /* we want the clock arrow to be on top of the logo and numbers. so we set the z-index of image to 2 . the background is 1, the arrows are 3 and the circle is 4 */
+  z-index: 2;
+}
+
+.clock {
+  /* we need to put the position of the clock as absolute and then set the position of the child element which is the image, as relative to its parent. */
+  position: relative;
+  background-color: lightgray;
+  width: 350px;
+  height: 350px;
+  /* making it square */
+  border-radius: 50%;
+  border: 5px solid darkgray;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* positioning the numbers */
+/* to style all of them we use number .div but to position them we select them separately */
+.numbers div {
+  position: absolute;
+  font-size: 27px;
+  font-weight: bold;
+  color: goldenrod;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.twelve {
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.three {
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sex {
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nine {
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* positioning the arrows */
+.arrows {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+/* styling the arrows */
+.arrows div {
+  background-color: white;
+  width: 7px;
+  position: absolute;
+  height: 120px;
+  transform-origin: bottom center;
+  bottom: 50%;
+  z-index: 3;
+  border-radius: 50% 50% 0 0;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.arrows .hour {
+  height: 70px;
+  background-color: rgb(223, 30, 190);
+  /* the transforms have been commented out after we finish the java script part. */
+  /* transform: rotate(30deg); */
+}
+.arrows .minutes {
+  height: 80px;
+  /* transform: rotate(30deg); */
+}
+.arrows .second {
+  /* transform: rotate(120deg); */
+  background-color: goldenrod;
+}
+
+/* creating the circle  */
+
+.arrows::before {
+  /* for before pseudo class we always have to add a content with empty string */
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: darkblue;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  z-index: 4;
+}
